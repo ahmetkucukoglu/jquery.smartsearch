@@ -7,6 +7,6 @@ Smart Search, tablolarınızdaki kolonlarda arama yapabilmenizi sağlar.
 İlk olarak jquery ve SmartSearch'ü sayfamıza ekliyoruz.
 
 <code>
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js">/<script>
-<script type="text/javascript" src="scripts/jquery.smartsearch.min.js">/<script>
+"<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js">/<script>
+<script type="text/javascript" src="scripts/jquery.smartsearch.min.js">/<script>"
 </code>
