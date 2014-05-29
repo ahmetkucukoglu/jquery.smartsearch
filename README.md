@@ -65,8 +65,8 @@ $("#reservationTable tbody").smartsearch({
     searchColumn: "[data-search]",
     searchInput: "#txtSearch",
     selectedClass: "smart-search-select",
-    endSearchRow: function (tbody, foundColumnCount) {
-        if (foundColumnCount == 3) {
+    endSearchRow: function (tbody, notFoundColumnCount) {
+        if (notFoundColumnCount == 3) {
             tbody.hide();
         }
         else {
