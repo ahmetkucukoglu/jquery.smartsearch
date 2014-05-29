@@ -14,19 +14,23 @@ Firstly jQuery and Smart Search adds to the page.
 Later it can html add and do configurations.
 
 ```html
+<input name="txtSearch" id="txtSearch" value="" />
+
 <table>
     <thead>
         <tr>
             <th>Hotel</th>
             <th>C-IN</th>
             <th>C-OUT</th>
+            <th>Country</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td data-override="Hotel 1"><a href="#">Hotel 1</a></td>
-            <td>01.06.2014</td>
-            <td>01.07.2014</td>
+            <td data-search="true" data-override="Hotel 1"><a href="#">Hotel 1</a></td>
+            <td data-search="true">01.06.2014</td>
+            <td data-search="true">01.07.2014</td>
+            <td>Turkey</td>
         </tr>
     </tbody>
     <tbody>
@@ -34,20 +38,23 @@ Later it can html add and do configurations.
             <td data-override="Hotel 2"><a href="#">Hotel 2</a></td>
             <td>01.07.2014</td>
             <td>01.08.2014</td>
+            <td>Turkey</td>
         </tr>
     </tbody>
     <tbody>
         <tr>
-            <td data-override="Hotel 1"><a href="#">Hotel 1</a></td>
-            <td>05.06.2014</td>
-            <td>15.07.2014</td>
+            <td data-search="true" data-override="Hotel 1"><a href="#">Hotel 1</a></td>
+            <td data-search="true">05.06.2014</td>
+            <td data-search="true">15.07.2014</td>
+            <td>Turkey</td>
         </tr>
     </tbody>
     <tbody>
         <tr>
-            <td data-override="Hotel 2"><a href="#">Hotel 2</a></td>
-            <td>01.06.2014</td>
-            <td>01.07.2014</td>
+            <td data-search="true" data-override="Hotel 2"><a href="#">Hotel 2</a></td>
+            <td data-search="true">01.06.2014</td>
+            <td data-search="true">01.07.2014</td>
+            <td>Turkey</td>
         </tr>
     </tbody>
 </table>
@@ -55,8 +62,8 @@ Later it can html add and do configurations.
 
 ```javascript
 $("#reservationTable tbody").smartsearch({
-    searchColumn: "[data-column-type]",
-    searchInput: "#search",
+    searchColumn: "[data-search]",
+    searchInput: "#txtSearch",
     selectedClass: "smart-search-select",
     endSearchRow: function (tbody, foundColumnCount) {
         if (foundColumnCount == 9) {
