@@ -20,7 +20,7 @@
                         var tbody = $(this),
                             searchColumn = $(value).find(settings.searchColumn);
 
-                        var foundCount = 0;
+                        var notFoundColumnCount = 0;
                         $.each(searchColumn, function (key1, value1) {
                             var column = $(value1),
                                 value = column.data("override") || $(value1).html(),
@@ -31,12 +31,12 @@
                             }
                             else {
                                 column.removeClass(settings.selectedClass);
-                                foundCount++;
+                                notFoundColumnCount++;
                             }
                         });
 
-                        if (settings.endSearchRowEvent) {
-                            settings.endSearchRowEvent(tbody, foundCount);
+                        if (settings.endSearchRow) {
+                            settings.endSearchRow(tbody, notFoundColumnCount);
                         }
                     });
                 }

@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery Smart Search</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.smartsearch.min.js"></script>
+    <style type="text/css">
+        .smart-search-select{
+            background-color: #ffc;
+        }
+    </style>
+</head>
+<body>
+    <input name="txtSearch" id="txtSearch" value="" />
+
+    <table id="reservationTable">
+        <thead>
+            <tr>
+                <th>Hotel</th>
+                <th>C-IN</th>
+                <th>C-OUT</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-search="true" data-override="Hotel 1"><a href="#">Hotel 1</a></td>
+                <td data-search="true">01.06.2014</td>
+                <td data-search="true">01.07.2014</td>
+                <td>Turkey</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td data-search="true" data-override="Hotel 2"><a href="#">Hotel 2</a></td>
+                <td data-search="true">01.07.2014</td>
+                <td data-search="true">01.08.2014</td>
+                <td>Turkey</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td data-search="true" data-override="Hotel 1"><a href="#">Hotel 1</a></td>
+                <td data-search="true">05.06.2014</td>
+                <td data-search="true">15.07.2014</td>
+                <td>Turkey</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td data-search="true" data-override="Hotel 2"><a href="#">Hotel 2</a></td>
+                <td data-search="true">01.06.2014</td>
+                <td data-search="true">01.07.2014</td>
+                <td>Turkey</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        $("#reservationTable tbody").smartsearch({
+            searchColumn: "[data-search]",
+            searchInput: "#txtSearch",
+            selectedClass: "smart-search-select",
+            endSearchRow: function (tbody, foundColumnCount) {
+                if (foundColumnCount == 3) {
+                    tbody.hide();
+                }
+                else {
+                    tbody.show();
+                }
+            },
+            endSearch: function () {
+                //Logic
+            }
+        });
+    </script>
+
+</body>
+</html>
